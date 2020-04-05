@@ -143,7 +143,7 @@ local function showCustomDialog()
 				-- do something that reads or writes catalog 
 				local topCollectionSet = maincat:createCollectionSet(props.MainKeyword, nil, true)
 			
-				local sCol = maincat:createSmartCollection("All",  
+				local sCol = maincat:createSmartCollection("1_All",  
 													{
 														{
 															criteria = "folder",
@@ -167,7 +167,7 @@ local function showCustomDialog()
 										)
 										
 				
-				sCol = maincat:createSmartCollection("_Rating : *",  
+				sCol = maincat:createSmartCollection("3_Rating : *",  
 														{
 															{
 																criteria = "folder",
@@ -185,7 +185,7 @@ local function showCustomDialog()
 													, topCollectionSet
 													, true)
 													
-				sCol = maincat:createSmartCollection("_Rating : **",  
+				sCol = maincat:createSmartCollection("3_Rating : **",  
 														{
 															{
 																criteria = "folder",
@@ -203,7 +203,7 @@ local function showCustomDialog()
 													, topCollectionSet
 													, true)
 				
-				sCol = maincat:createSmartCollection("_Rating : ***",  
+				sCol = maincat:createSmartCollection("3_Rating : ***",  
 														{
 															{
 																criteria = "folder",
@@ -221,7 +221,7 @@ local function showCustomDialog()
 													, topCollectionSet
 													, true)
 													
-				sCol = maincat:createSmartCollection("_Rating : ****",  
+				sCol = maincat:createSmartCollection("3_Rating : ****",  
 														{
 															{
 																criteria = "folder",
@@ -239,7 +239,7 @@ local function showCustomDialog()
 													, topCollectionSet
 													, true)
 													
-				sCol = maincat:createSmartCollection("_Rating : *****",  
+				sCol = maincat:createSmartCollection("3_Rating : *****",  
 														{
 															{
 																criteria = "folder",
@@ -257,7 +257,7 @@ local function showCustomDialog()
 													, topCollectionSet
 													, true)
 				
-				sCol = maincat:createSmartCollection("_Picked",  
+				sCol = maincat:createSmartCollection("2_Picked",  
 														{
 															{
 																criteria = "folder",
@@ -292,7 +292,7 @@ local function showCustomDialog()
 													
 													
 													
-				sCol = maincat:createSmartCollection("Red",  
+				sCol = maincat:createSmartCollection("4_Red",  
 														{					 
 															{
 																criteria = "folder",
@@ -329,7 +329,7 @@ local function showCustomDialog()
 										
 										
 																
-				sCol = maincat:createSmartCollection("Green",  
+				sCol = maincat:createSmartCollection("6_Green",  
 																{					 
 																	{
 																		criteria = "folder",
@@ -363,7 +363,158 @@ local function showCustomDialog()
 												},
 												combine = "intersect",
 												}
-										)	
+										)
+										
+										
+						sCol = maincat:createSmartCollection("5_Yellow",  
+										{					 
+											{
+												criteria = "folder",
+												operation = "all",
+												value = props.MainKeyword,
+											},
+											
+											{
+												criteria = "labelColor",
+												operation = "==",
+												value = 2,
+											},
+											combine = "intersect",
+										}
+										, topCollectionSet
+										, true)
+
+
+									sCol:setSearchDescription (
+									{					
+										{
+											criteria = "folder",
+											operation = "all",
+											value = props.MainKeyword,
+										},
+										
+										{
+											criteria = "labelColor",
+											operation = "==",
+											value = 2,
+										},
+										combine = "intersect",
+										}
+									)
+
+
+							sCol = maincat:createSmartCollection("5_Yellow_PSD",  
+										{					 
+											{
+												criteria = "folder",
+												operation = "all",
+												value = props.MainKeyword,
+											},
+											
+											{
+												criteria = "labelColor",
+												operation = "==",
+												value = 2,
+											},
+											{
+												criteria = "pick",
+												operation = "==",
+												value = 1,
+											},
+											{
+												criteria = "fileFormat",
+												operation = "==",
+												value = "PSD",
+											},
+											combine = "intersect",
+										}
+										, topCollectionSet
+										, true)
+
+
+									sCol:setSearchDescription (
+									{					
+										{
+											criteria = "folder",
+											operation = "all",
+											value = props.MainKeyword,
+										},
+										
+										{
+											criteria = "labelColor",
+											operation = "==",
+											value = 2,
+										},
+										{
+											criteria = "pick",
+											operation = "==",
+											value = 1,
+										},
+										{
+											criteria = "fileFormat",
+											operation = "==",
+											value = "PSD",
+										},
+										combine = "intersect",
+										}
+									)
+
+							sCol = maincat:createSmartCollection("6_Green_PSD",  
+										{					 
+											{
+												criteria = "folder",
+												operation = "all",
+												value = props.MainKeyword,
+											},
+											
+											{
+												criteria = "labelColor",
+												operation = "==",
+												value = 3,
+											},
+											{
+												criteria = "pick",
+												operation = "==",
+												value = 1,
+											},
+											{
+												criteria = "fileFormat",
+												operation = "==",
+												value = "PSD",
+											},
+											combine = "intersect",
+										}
+										, topCollectionSet
+										, true)
+
+
+									sCol:setSearchDescription (
+									{					
+										{
+											criteria = "folder",
+											operation = "all",
+											value = props.MainKeyword,
+										},
+										
+										{
+											criteria = "labelColor",
+											operation = "==",
+											value = 2,
+										},
+										{
+											criteria = "pick",
+											operation = "==",
+											value = 1,
+										},
+										{
+											criteria = "fileFormat",
+											operation = "==",
+											value = "PSD",
+										},
+										combine = "intersect",
+										}
+									)
+				
 			
 				for i=1,props.NrOfSets,1
 					do
@@ -396,7 +547,7 @@ local function showCustomDialog()
 																	},
 																	{
 																		criteria = "collection",
-																		operation = "beginsWith",
+																		operation = "endsWith",
 																		value = SetItemsColName,
 																	},
 																	{
@@ -408,6 +559,27 @@ local function showCustomDialog()
 																}
 																, setCollectionSet
 																, true)
+
+							sCol:setSearchDescription (
+														{
+															{
+																criteria = "folder",
+																operation = "all",
+																value = props.MainKeyword,
+															},
+															{
+																criteria = "collection",
+																operation = "endsWith",
+																value = SetItemsColName,
+															},
+															{
+																criteria = "rating",
+																operation = "==",
+																value = 1,
+															},
+															combine = "intersect",
+														}
+													)										
 							--------------------
 							
 						sCol = maincat:createSmartCollection("2_Rating : **",  
@@ -419,7 +591,7 @@ local function showCustomDialog()
 																	},
 																	{
 																		criteria = "collection",
-																		operation = "beginsWith",
+																		operation = "endsWith",
 																		value = SetItemsColName,
 																	},
 																	{
@@ -431,6 +603,27 @@ local function showCustomDialog()
 																}
 																, setCollectionSet
 																, true)
+
+																sCol:setSearchDescription (
+																	{
+																		{
+																			criteria = "folder",
+																			operation = "all",
+																			value = props.MainKeyword,
+																		},
+																		{
+																			criteria = "collection",
+																			operation = "endsWith",
+																			value = SetItemsColName,
+																		},
+																		{
+																			criteria = "rating",
+																			operation = "==",
+																			value = 2,
+																		},
+																		combine = "intersect",
+																	}
+																)				
 							
 											
 --------------------
@@ -443,7 +636,7 @@ local function showCustomDialog()
 																	},
 																	{
 																		criteria = "collection",
-																		operation = "beginsWith",
+																		operation = "endsWith",
 																		value = SetItemsColName,
 																	},
 																	{
@@ -455,6 +648,27 @@ local function showCustomDialog()
 																}
 																, setCollectionSet
 																, true)
+																
+																sCol:setSearchDescription (
+																	{
+																		{
+																			criteria = "folder",
+																			operation = "all",
+																			value = props.MainKeyword,
+																		},
+																		{
+																			criteria = "collection",
+																			operation = "endsWith",
+																			value = SetItemsColName,
+																		},
+																		{
+																			criteria = "rating",
+																			operation = "==",
+																			value = 3,
+																		},
+																		combine = "intersect",
+																	}
+																)			
 						
 						--------------------
 						sCol = maincat:createSmartCollection("2_Rating : ****",  
@@ -466,7 +680,7 @@ local function showCustomDialog()
 																	},
 																	{
 																		criteria = "collection",
-																		operation = "beginsWith",
+																		operation = "endsWith",
 																		value = SetItemsColName,
 																	},
 																	{
@@ -478,6 +692,27 @@ local function showCustomDialog()
 																}
 																, setCollectionSet
 																, true)
+
+																sCol:setSearchDescription (
+																	{
+																		{
+																			criteria = "folder",
+																			operation = "all",
+																			value = props.MainKeyword,
+																		},
+																		{
+																			criteria = "collection",
+																			operation = "endsWith",
+																			value = SetItemsColName,
+																		},
+																		{
+																			criteria = "rating",
+																			operation = "==",
+																			value = 4,
+																		},
+																		combine = "intersect",
+																	}
+																)			
 						
 						--------------------
 						sCol = maincat:createSmartCollection("2_Rating : *****",  
@@ -489,7 +724,7 @@ local function showCustomDialog()
 																	},
 																	{
 																		criteria = "collection",
-																		operation = "beginsWith",
+																		operation = "endsWith",
 																		value = SetItemsColName,
 																	},
 																	{
@@ -501,6 +736,27 @@ local function showCustomDialog()
 																}
 																, setCollectionSet
 																, true)
+
+																sCol:setSearchDescription (
+																	{
+																		{
+																			criteria = "folder",
+																			operation = "all",
+																			value = props.MainKeyword,
+																		},
+																		{
+																			criteria = "collection",
+																			operation = "endsWith",
+																			value = SetItemsColName,
+																		},
+																		{
+																			criteria = "rating",
+																			operation = "==",
+																			value = 5,
+																		},
+																		combine = "intersect",
+																	}
+																)			
 						
 						--------------------
 						sCol = maincat:createSmartCollection("1_Picked",  
@@ -512,7 +768,7 @@ local function showCustomDialog()
 																	},
 																	{
 																		criteria = "collection",
-																		operation = "beginsWith",
+																		operation = "endsWith",
 																		value = SetItemsColName,
 																	},
 																	{
@@ -524,7 +780,7 @@ local function showCustomDialog()
 																}
 																, setCollectionSet
 																, true)
-																
+
 						
 						sCol:setSearchDescription (
 											{					
@@ -535,7 +791,7 @@ local function showCustomDialog()
 												},
 												{
 													criteria = "collection",
-													operation = "beginsWith",
+													operation = "endsWith",
 													value = SetItemsColName,
 												},
 												{
@@ -557,7 +813,7 @@ local function showCustomDialog()
 																	},
 																	{
 																		criteria = "collection",
-																		operation = "beginsWith",
+																		operation = "endsWith",
 																		value = SetItemsColName,
 																	},
 																	{
@@ -580,7 +836,7 @@ local function showCustomDialog()
 												},
 												{
 													criteria = "collection",
-													operation = "beginsWith",
+													operation = "endsWith",
 													value = SetItemsColName,
 												},
 												{
@@ -602,7 +858,7 @@ local function showCustomDialog()
 																	},
 																	{
 																		criteria = "collection",
-																		operation = "beginsWith",
+																		operation = "endsWith",
 																		value = SetItemsColName,
 																	},
 																	{
@@ -624,7 +880,7 @@ local function showCustomDialog()
 												},
 												{
 													criteria = "collection",
-													operation = "beginsWith",
+													operation = "endsWith",
 													value = SetItemsColName,
 												},
 												{
@@ -646,7 +902,7 @@ local function showCustomDialog()
 																	},
 																	{
 																		criteria = "collection",
-																		operation = "beginsWith",
+																		operation = "endsWith",
 																		value = SetItemsColName,
 																	},
 																	{
@@ -658,6 +914,30 @@ local function showCustomDialog()
 																}
 																, setCollectionSet
 																, true)
+
+								sCol:setSearchDescription (
+											{					
+												{
+													criteria = "folder",
+													operation = "all",
+													value = props.MainKeyword,
+												},
+												{
+													criteria = "collection",
+													operation = "endsWith",
+													value = SetItemsColName,
+												},
+												{
+													criteria = "labelColor",
+													operation = "==",
+													value = 2,
+												},
+												combine = "intersect",
+												}
+										)
+
+
+						
 					end
 				end ) 
 			end)        
