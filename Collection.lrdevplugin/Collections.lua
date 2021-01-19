@@ -176,7 +176,7 @@ local function showCustomDialog()
 															},
 															{
 																 criteria = "rating",
-																 operation = "==",
+																 operation = ">=",
 																 value = 1,
 															},
 															
@@ -194,7 +194,7 @@ local function showCustomDialog()
 															},
 															{
 																 criteria = "rating",
-																 operation = "==",
+																 operation = ">=",
 																 value = 2,
 															},
 															
@@ -212,7 +212,7 @@ local function showCustomDialog()
 															},
 															{
 																 criteria = "rating",
-																 operation = "==",
+																 operation = ">=",
 																 value = 3,
 															},
 															
@@ -230,7 +230,7 @@ local function showCustomDialog()
 															},
 															{
 																 criteria = "rating",
-																 operation = "==",
+																 operation = ">=",
 																 value = 4,
 															},
 															
@@ -248,7 +248,7 @@ local function showCustomDialog()
 															},
 															{
 																 criteria = "rating",
-																 operation = "==",
+																 operation = ">=",
 																 value = 5,
 															},
 															
@@ -499,7 +499,7 @@ local function showCustomDialog()
 										{
 											criteria = "labelColor",
 											operation = "==",
-											value = 2,
+											value = 3,
 										},
 										{
 											criteria = "pick",
@@ -552,7 +552,7 @@ local function showCustomDialog()
 																	},
 																	{
 																		criteria = "rating",
-																		operation = "==",
+																		operation = ">=",
 																		value = 1,
 																	},
 																	combine = "intersect",
@@ -574,7 +574,7 @@ local function showCustomDialog()
 															},
 															{
 																criteria = "rating",
-																operation = "==",
+																operation = ">=",
 																value = 1,
 															},
 															combine = "intersect",
@@ -596,7 +596,7 @@ local function showCustomDialog()
 																	},
 																	{
 																		criteria = "rating",
-																		operation = "==",
+																		operation = ">=",
 																		value = 2,
 																	},
 																	combine = "intersect",
@@ -618,7 +618,7 @@ local function showCustomDialog()
 																		},
 																		{
 																			criteria = "rating",
-																			operation = "==",
+																			operation = ">=",
 																			value = 2,
 																		},
 																		combine = "intersect",
@@ -641,7 +641,7 @@ local function showCustomDialog()
 																	},
 																	{
 																		criteria = "rating",
-																		operation = "==",
+																		operation = ">=",
 																		value = 3,
 																	},
 																	combine = "intersect",
@@ -663,7 +663,7 @@ local function showCustomDialog()
 																		},
 																		{
 																			criteria = "rating",
-																			operation = "==",
+																			operation = ">=",
 																			value = 3,
 																		},
 																		combine = "intersect",
@@ -685,7 +685,7 @@ local function showCustomDialog()
 																	},
 																	{
 																		criteria = "rating",
-																		operation = "==",
+																		operation = ">=",
 																		value = 4,
 																	},
 																	combine = "intersect",
@@ -707,7 +707,7 @@ local function showCustomDialog()
 																		},
 																		{
 																			criteria = "rating",
-																			operation = "==",
+																			operation = ">=",
 																			value = 4,
 																		},
 																		combine = "intersect",
@@ -729,7 +729,7 @@ local function showCustomDialog()
 																	},
 																	{
 																		criteria = "rating",
-																		operation = "==",
+																		operation = ">=",
 																		value = 5,
 																	},
 																	combine = "intersect",
@@ -751,7 +751,7 @@ local function showCustomDialog()
 																		},
 																		{
 																			criteria = "rating",
-																			operation = "==",
+																			operation = ">=",
 																			value = 5,
 																		},
 																		combine = "intersect",
